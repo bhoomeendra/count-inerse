@@ -23,7 +23,7 @@ int count(int *a,int start,int mid,int end)
 			sum=sum+countt;
 		}
 	}
-	if(ls==mid+1)
+	if(ls>=mid+1)
 	{
 		while(rs<end+1)
 		{
@@ -34,7 +34,7 @@ int count(int *a,int start,int mid,int end)
 	}
 	else
 	{
-while(rs<end+1)
+while(ls<mid+1)
 {
 				b[i]=a[ls];
 			++ls;++i;
@@ -49,6 +49,7 @@ while(rs<end+1)
 		++ls;
 		++i;
 	}
+	cout<<sum<<end;
 	return sum;
 }
 int inver(int *a,int start,int end)
@@ -76,5 +77,11 @@ int main()
 	}
 	int f=inver(a,0,size);
 	cout<<f<<endl;
+		i=0;
+		while(i<size)
+	{
+		cout<<a[i]<<endl;
+		++i;
+	}
 	return 0;
 }
